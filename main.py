@@ -25,7 +25,13 @@ def canny(image):
 # The rectangle is based of the dementions of the image and the image created through the canny function
 def regionOfInterest(image):
     height = image.shape[0]
+    print("h: " + str(height))
+
+    width = image.shape[1]
+    print("w: " + str(width))
+
     rectangle = cv2.rectangle(image, (200, height), (300, 0), (255,255,255), -1)
+    #need to create method that goes through image and finds the dimentions in which the line takes place.
     return rectangle
 
 def main():
@@ -49,6 +55,30 @@ def main():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    print("Hello World")
     main()
 
+# pixel height: 960
+# pixel width: 540
+
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+#Sense the position of the line horizontally
+#just hard code
+# simplify regoin of intrest
+
+# see where line is right to left
+# the ratio between the distance 
+# have scale (1 inch left, 12 inch right)
+# v1 take measurement in the the middle
+# v2 take measurement at the top and the bottom to find angle
+
+# definitons:
+# offset percentages:
+# search for boundaries and outliers(using functions, rolling average, straight tolerance)
+# for video
+# tolerance
+# every second take 5 images
+#  takes a breath every 2 seconds
+# average the pixels every stroke, in order take offset
+# Use accelerometer to sense z movement at the end of pool, in order
